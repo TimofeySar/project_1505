@@ -33,7 +33,7 @@ class mainwindow(QMainWindow):
         self.stackedWidget.setCurrentIndex(4)
 
     def mouseMoveEvent(self, event):
-        print('popa')
+        print('pisa')
         if \
                 self.coords[0] + 75 <= event.x() <= self.coords[0] - 75 and self.coords[1] + 23 <= event.y() <= \
                         self.coords[1] - 23:
