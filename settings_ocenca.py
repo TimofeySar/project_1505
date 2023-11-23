@@ -1,8 +1,8 @@
 import sys
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget
 import random
+from PyQt5.QtWidgets import QWidget, QApplication, QPushButton, QLabel
 from PyQt5.QtCore import pyqtSignal
+
 
 class Button(QPushButton):
     mouseMoved = pyqtSignal()
@@ -51,41 +51,8 @@ class Example(QWidget):
         self.btn.move(*self.coords)
 
 
-class mainwindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        uic.loadUi('maindesugn.ui', self)
-        self.stackedWidget.setCurrentIndex(0)
-        self.setMouseTracking(True)
-        self.lupabutton.clicked.connect(self.lupa)
-        self.kartatabutton.clicked.connect(self.kartata)
-        self.settingsbutton.clicked.connect(self.settings)
-        self.shapkakabutton.clicked.connect(self.shapkala)
-        self.coords = [240, 310]
-        self.btn_size = [75, 23]
-        self.w = 350
-        self.h = 450
-
-    def lupa(self):
-        self.stackedWidget.setCurrentIndex(3)
-
-    def shapkala(self):
-        self.stackedWidget.setCurrentIndex(1)
-
-    def kartata(self):
-        self.stackedWidget.setCurrentIndex(2)
-
-    def settings(self):
-        self.stackedWidget.setCurrentIndex(4)
-        self.pushButton_ocenla.clicked.connect(self.dialog)
-
-    def dialog(self):
-        self.dialog_copy = Example()
-        self.dialog_copy.show()
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = mainwindow()
+    ex = Example()
     ex.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())

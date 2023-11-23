@@ -33,7 +33,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>-10</y>
       <width>401</width>
       <height>381</height>
      </rect>
@@ -363,13 +363,13 @@ border-radius: 20px;  </string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_yes">
+     <widget class="QPushButton" name="pushButton_ocenla">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>310</y>
-        <width>75</width>
-        <height>23</height>
+        <x>260</x>
+        <y>320</y>
+        <width>131</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -377,41 +377,7 @@ border-radius: 20px;  </string>
 border-radius: 20px;  </string>
       </property>
       <property name="text">
-       <string>Да </string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_no">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>310</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 20px;  </string>
-      </property>
-      <property name="text">
-       <string>Нет</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>270</y>
-        <width>141</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 20px;  </string>
-      </property>
-      <property name="text">
-       <string>Вам нравится наш проект</string>
+       <string>Оцените наш проект</string>
       </property>
      </widget>
     </widget>
