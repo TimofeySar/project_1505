@@ -14,6 +14,14 @@ class Widget1(QtWidgets.QLabel):  # QWidget
     def enterEvent(self, event):
         print('class Widget1: enterEvent')
 
+        def mouseMoveEvent(self, event):
+            if \
+                    self.coords[0] + 75 <= event.x() <= self.coords[0] - 75 and self.coords[1] + 23 <= event.y() <= \
+                            self.coords[1] - 23:
+                self.coords[0] = random.randint(0, self.w - self.btn_size[0])
+                self.coords[1] = random.randint(0, self.h - self.btn_size[1])
+            self.pushButton_no.move(*self.coords)
+
 
 class Widget2(QtWidgets.QLabel):
     def __init__(self, parent=None):
