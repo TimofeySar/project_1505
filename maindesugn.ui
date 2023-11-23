@@ -51,7 +51,7 @@
      <number>0</number>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="home">
      <property name="styleSheet">
@@ -61,9 +61,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>401</width>
-        <height>381</height>
+        <height>371</height>
        </rect>
       </property>
       <property name="html">
@@ -84,7 +84,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>0</y>
+        <y>10</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -110,9 +110,9 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>411</width>
-        <height>381</height>
+        <height>371</height>
        </rect>
       </property>
       <property name="font">
@@ -173,7 +173,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>0</y>
+        <y>10</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -217,7 +217,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>0</y>
+        <y>10</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -243,7 +243,7 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>20</y>
         <width>271</width>
         <height>41</height>
        </rect>
@@ -260,13 +260,14 @@ border-radius: 20px;  </string>
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>10</y>
+        <y>20</y>
         <width>71</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;  </string>
       </property>
       <property name="text">
        <string>Найти</string>
@@ -285,13 +286,14 @@ border-radius: 20px;  </string>
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>20</y>
+        <y>30</y>
         <width>21</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
+       <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 20px;  </string>
       </property>
       <property name="text">
        <string/>
@@ -332,6 +334,11 @@ border-radius: 20px;  </string>
        <bool>false</bool>
       </property>
      </widget>
+     <zorder>lineEdit</zorder>
+     <zorder>Naity</zorder>
+     <zorder>krestik</zorder>
+     <zorder>listView</zorder>
+     <zorder>button_home_2</zorder>
     </widget>
     <widget class="QWidget" name="settings_2">
      <property name="styleSheet">
@@ -341,7 +348,7 @@ border-radius: 20px;  </string>
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>0</y>
+        <y>10</y>
         <width>71</width>
         <height>71</height>
        </rect>

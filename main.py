@@ -1,8 +1,32 @@
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget, QDialog
 import random
 from PyQt5.QtCore import pyqtSignal
+
+class dialog(QDialog):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('otzif.ui', self)
+        self.Thanks.clicked.connect(self.rite)
+        self.bygirl.clicked.connect(self.privet)
+
+
+    def rite(self):
+        if not self.otzif.text():
+            self.close()
+        with open("reviews.txt", 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            f.close()
+        with open("reviews.txt", 'a+', encoding='utf-8') as file:
+            print(lines)
+            bitit = len(lines) + 1
+            print(bitit, self.otzif.text(), file=file)
+            print(self.otzif.text())
+
+        self.close()
+    def privet(self):
+        self.close()
 
 class Button(QPushButton):
     mouseMoved = pyqtSignal()
@@ -43,6 +67,8 @@ class Example(QWidget):
         self.show()
 
     def okletsgo(self):
+        self.dialog_copyy = dialog()
+        self.dialog_copyy.show()
         self.close()
 
     def moveButton(self):
