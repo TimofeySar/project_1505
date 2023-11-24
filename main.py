@@ -82,7 +82,6 @@ class mainwindow(QMainWindow):
         super().__init__()
         uic.loadUi('maindesugn.ui', self)
         self.stackedWidget.setCurrentIndex(0)
-        self.setMouseTracking(True)
         self.lupabutton.clicked.connect(self.lupa)
         self.kartatabutton.clicked.connect(self.kartata)
         self.settingsbutton.clicked.connect(self.settings)
@@ -92,22 +91,31 @@ class mainwindow(QMainWindow):
         self.w = 350
         self.h = 450
 
+
+
     def lupa(self):
+        self.button_home_2.clicked.connect(self.homi)
         self.stackedWidget.setCurrentIndex(3)
 
     def shapkala(self):
         self.stackedWidget.setCurrentIndex(1)
+        self.button_home12.clicked.connect(self.homi)
 
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
+        self.button_home_1.clicked.connect(self.homi)
 
     def settings(self):
         self.stackedWidget.setCurrentIndex(4)
         self.pushButton_ocenla.clicked.connect(self.dialog)
+        self.button_home_3.clicked.connect(self.homi)
 
     def dialog(self):
         self.dialog_copy = Example()
         self.dialog_copy.show()
+
+    def homi(self):
+        self.stackedWidget.setCurrentIndex(0)
 
 
 if __name__ == '__main__':
