@@ -3,7 +3,16 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget, QDialog
 import random
 from PyQt5.QtCore import pyqtSignal
+class chachech(QDialog):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('cochesh.ui', self)
+        self.kekek.clicked.connect(self.kekekekek)
 
+    def kekekekek(self):
+        self.dialog_copyy = dialog()
+        self.dialog_copyy.show()
+        self.close()
 class dialog(QDialog):
     def __init__(self):
         super().__init__()
@@ -26,6 +35,8 @@ class dialog(QDialog):
 
         self.close()
     def privet(self):
+        self.dialog_copyyy = chachech()
+        self.dialog_copyyy.show()
         self.close()
 
 class Button(QPushButton):
