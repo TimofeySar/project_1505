@@ -8,7 +8,7 @@ class chachech(QDialog):
         super().__init__()
         uic.loadUi('cochesh.ui', self)
         self.kekek.clicked.connect(self.kekekekek)
-
+.....
     def kekekekek(self):
         self.dialog_copyy = dialog()
         self.dialog_copyy.show()
