@@ -120,7 +120,6 @@ class mainwindow(QMainWindow):
         self.stackedWidget.setCurrentIndex(4)
         self.pushButton_ocenla.clicked.connect(self.dialog)
         self.button_home_3.clicked.connect(self.homi)
-        self.temaa.clicked.connect(self.tema)
 
     def dialog(self):
         self.dialog_copy = Example()
