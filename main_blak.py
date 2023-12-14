@@ -3,7 +3,8 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget, QDialog
 import random
 from PyQt5.QtCore import pyqtSignal
-import main_blak as bl
+
+
 class chachech(QDialog):
     def __init__(self):
         super().__init__()
@@ -14,13 +15,14 @@ class chachech(QDialog):
         self.dialog_copyy = dialog()
         self.dialog_copyy.show()
         self.close()
+
+
 class dialog(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi('otzif.ui', self)
         self.Thanks.clicked.connect(self.rite)
         self.bygirl.clicked.connect(self.privet)
-
 
     def rite(self):
         if not self.otzif.text():
@@ -35,10 +37,12 @@ class dialog(QDialog):
             print(self.otzif.text())
 
         self.close()
+
     def privet(self):
         self.dialog_copyyy = chachech()
         self.dialog_copyyy.show()
         self.close()
+
 
 class Button(QPushButton):
     mouseMoved = pyqtSignal()
@@ -69,7 +73,6 @@ class Example(QWidget):
         self.button.resize(*self.btn_size)
         self.button.clicked.connect(self.okletsgo)
 
-
         self.btn = Button(self)
         self.btn.setMouseTracking(True)
         self.btn.setText("нет")
@@ -92,7 +95,7 @@ class Example(QWidget):
 class mainwindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('maindesugn.ui', self)
+        uic.loadUi('maindesugn_black.ui', self)
         self.stackedWidget.setCurrentIndex(0)
         self.lupabutton.clicked.connect(self.lupa)
         self.kartatabutton.clicked.connect(self.kartata)
@@ -102,8 +105,6 @@ class mainwindow(QMainWindow):
         self.btn_size = [75, 23]
         self.w = 350
         self.h = 450
-
-
 
     def lupa(self):
         self.button_home_2.clicked.connect(self.homi)
@@ -131,8 +132,8 @@ class mainwindow(QMainWindow):
         self.stackedWidget.setCurrentIndex(0)
 
     def tema(self):
-        blak = bl.mainwindow()
-        blak.exec()
+        pass
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
