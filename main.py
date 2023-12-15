@@ -1,9 +1,12 @@
 import sys
+import sqlite3
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget, QDialog
 import random
 from PyQt5.QtCore import pyqtSignal
 import main_blak as bl
+
+
 class chachech(QDialog):
     def __init__(self):
         super().__init__()
@@ -14,13 +17,14 @@ class chachech(QDialog):
         self.dialog_copyy = dialog()
         self.dialog_copyy.show()
         self.close()
+
+
 class dialog(QDialog):
     def __init__(self):
         super().__init__()
         uic.loadUi('otzif.ui', self)
         self.Thanks.clicked.connect(self.rite)
         self.bygirl.clicked.connect(self.privet)
-
 
     def rite(self):
         if not self.otzif.text():
@@ -35,10 +39,12 @@ class dialog(QDialog):
             print(self.otzif.text())
 
         self.close()
+
     def privet(self):
         self.dialog_copyyy = chachech()
         self.dialog_copyyy.show()
         self.close()
+
 
 class Button(QPushButton):
     mouseMoved = pyqtSignal()
@@ -68,7 +74,6 @@ class Example(QWidget):
         self.button.move(100, 250)
         self.button.resize(*self.btn_size)
         self.button.clicked.connect(self.okletsgo)
-
 
         self.btn = Button(self)
         self.btn.setMouseTracking(True)
@@ -103,11 +108,11 @@ class mainwindow(QMainWindow):
         self.w = 350
         self.h = 450
 
-
-
     def lupa(self):
         self.button_home_2.clicked.connect(self.homi)
         self.stackedWidget.setCurrentIndex(3)
+        self.Naity.clicked.connect(self.select)
+        self.krestik.clicked.connect(self.ydai)
 
     def shapkala(self):
         self.stackedWidget.setCurrentIndex(1)
@@ -127,12 +132,39 @@ class mainwindow(QMainWindow):
         self.dialog_copy = Example()
         self.dialog_copy.show()
 
+    def ydai(self):
+        self.lineEdit.clear()
+
     def homi(self):
         self.stackedWidget.setCurrentIndex(0)
 
     def tema(self):
-        blak = bl.mainwindow()
-        blak.exec()
+        pass
+
+    def select(self):
+        self.con = sqlite3.connect("moscow_landmarks.db")
+        self.listWidget.clear()
+        req = (f"SELECT DISTINCT name FROM landmarks WHERE "
+               f"name"
+               f" LIKE ?")
+        cur = self.con.cursor()
+        param = self.lineEdit.text()
+        paramtrue = '%' + param + '%'
+        print(paramtrue)
+
+        result = cur.execute(
+            req,
+            (paramtrue,)).fetchall()
+        print(result)
+        for elem in result:
+            self.listWidget.addItem(elem[0])
+
+        if not result:
+            self.listWidget.addItem('Неверный запрос')
+            self.listWidget.addItem('Похоже такой достопремечательности нет в москве:(')
+        else:
+            pass
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
