@@ -135,6 +135,13 @@ class mainwindow(QMainWindow):
     def ydai(self):
         self.lineEdit.clear()
 
+    def show_dialog(self):
+        item = self.listWidget.currentItem()
+        item = str(item.text())
+        Info_window_copy = Info_window(item)
+        Info_window_copy.exec()
+
+
     def homi(self):
         self.stackedWidget.setCurrentIndex(0)
 
@@ -163,7 +170,23 @@ class mainwindow(QMainWindow):
             self.listWidget.addItem('Неверный запрос')
             self.listWidget.addItem('Похоже такой достопремечательности нет в москве:(')
         else:
-            pass
+            self.listWidget.clicked.connect(lambda: self.show_dialog())
+
+
+class Info_window(QDialog):
+    def __init__(self, item):
+        super().__init__()
+        uic.loadUi('vidget.ui', self)
+        self.item = item
+        self.connn = sqlite3.connect("moscow_landmarks.db")
+        cur = self.connn.cursor()
+        req = cur.execute("""SELECT * FROM landmarks WHERE 
+                               name = ?""",
+                          (self.item,)).fetchall()
+        self.label.setText(item)
+        self.label_3.setText(str(req[0][3]))
+        self.label_4.setText(str(req[0][2]))
+
 
 
 if __name__ == '__main__':

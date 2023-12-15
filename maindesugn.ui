@@ -474,6 +474,9 @@ border-radius: 20px;  </string>
       <height>71</height>
      </size>
     </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="settingsbutton">
     <property name="geometry">
