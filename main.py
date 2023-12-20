@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWid
 import random
 from PyQt5.QtCore import pyqtSignal
 import main_blak as bl
-
+from PyQt5.QtGui import QFont
 
 class chachech(QDialog):
     def __init__(self):
@@ -177,15 +177,30 @@ class Info_window(QDialog):
     def __init__(self, item):
         super().__init__()
         uic.loadUi('vidget.ui', self)
-        self.item = item
+        self.item = str(item)
         self.connn = sqlite3.connect("moscow_landmarks.db")
         cur = self.connn.cursor()
         req = cur.execute("""SELECT * FROM landmarks WHERE 
                                name = ?""",
                           (self.item,)).fetchall()
+        info_text = str(req[0][2])
+        result = ' '.join(info_text.split())
+        print(len(result))
+        print(result)
+        if 1300 > len(result) > 600:
+            font = QFont("Arial", 11)
+        elif len(result) < 600:
+            font = QFont("Arial", 13)
+        else:
+            font = QFont("Arial", 8)
         self.label.setText(item)
         self.label_3.setText(str(req[0][3]))
-        self.label_4.setText(str(req[0][2]))
+        self.label_4.setText(result)
+        self.label_4.setWordWrap(True)
+        self.label.setWordWrap(True)
+        self.label_4.setFont(font)
+
+
 
 
 

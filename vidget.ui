@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>374</width>
-    <height>636</height>
+    <height>777</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>30</x>
      <y>20</y>
      <width>311</width>
-     <height>31</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
@@ -35,7 +35,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>60</y>
+     <y>90</y>
      <width>54</width>
      <height>14</height>
     </rect>
@@ -48,7 +48,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>90</y>
+     <y>110</y>
      <width>321</width>
      <height>16</height>
     </rect>
@@ -62,9 +62,21 @@
     <rect>
      <x>20</x>
      <y>160</y>
-     <width>341</width>
-     <height>441</height>
+     <width>343</width>
+     <height>601</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>343</width>
+     <height>441</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>3465345</width>
+     <height>16777215</height>
+    </size>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;TextLabel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
