@@ -1,44 +1,42 @@
 import sys
-import random
-from PyQt5.QtWidgets import QWidget, QApplication, QPushButton
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
 
 
-class Button(QPushButton):
-    mouseMoved = pyqtSignal()
-
-    def mouseMoveEvent(self, event):
-        self.mouseMoved.emit()
-
-
-class Example(QWidget):
+class Window1(QWidget):
     def __init__(self):
-        super().__init__()
+        super(Window1, self).__init__()
+        self.setWindowTitle('Window1')
+        self.setMinimumWidth(200)
+        self.setMinimumHeight(50)
+        self.button = QPushButton(self)
+        self.button.setText('Ok')
+        self.button.show()
 
-        self.coords = [40, 40]
-        self.btn_size = [120, 40]
-        self.d = 15
-        self.w = 500
-        self.h = 400
-        self.setGeometry(300, 300, self.w, self.h)
-        self.setWindowTitle('Убегающая кнопка')
 
-        self.btn = Button(self)
-        self.btn.setMouseTracking(True);
-        self.btn.setText("Нажми меня")
-        self.btn.resize(*self.btn_size)
-        self.btn.move(*self.coords)
-        self.btn.mouseMoved.connect(self.moveButton)
-        self.show()
+class Window2(QWidget):
+    def __init__(self):
+        super(Window2, self).__init__()
+        self.setWindowTitle('Window2')
 
-    def moveButton(self):
-        self.coords[0] = random.randint(0, self.w - self.btn_size[0])
-        self.coords[1] = random.randint(0, self.h - self.btn_size[1])
-        self.btn.move(*self.coords)
 
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.setWindowTitle('MainWindow')
+
+    def show_window_1(self):
+        self.w1 = Window1()
+        self.w1.button.clicked.connect(self.show_window_2)
+        self.w1.button.clicked.connect(self.w1.close)
+        self.w1.show()
+
+    def show_window_2(self):
+        self.w2 = Window2()
+        self.w2.show()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = Example()
-    ex.show()
+    w = MainWindow()
+    w.show()
+    w.show_window_1()
     sys.exit(app.exec_())
