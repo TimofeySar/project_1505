@@ -98,6 +98,7 @@ class Example(QWidget):
 
 class mainwindow(QMainWindow):
     def __init__(self):
+        print(1)
         super().__init__()
         uic.loadUi('maindesugn.ui', self)
         self.stackedWidget.setCurrentIndex(0)
@@ -123,8 +124,10 @@ class mainwindow(QMainWindow):
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
         self.button_home_1.clicked.connect(self.homi)
-        mainwindow.close(self)
+        mainwindow.hide(self)
         main()
+        mainwindow.show(self)
+        self.stackedWidget.setCurrentIndex(0)
 
     def settings(self):
         self.stackedWidget.setCurrentIndex(4)
@@ -254,7 +257,6 @@ def load_map(mp):
 
 
 def main():
-
     # Инициализируем pygame
     pygame.init()
     screen = pygame.display.set_mode((600, 450))
@@ -272,7 +274,6 @@ def main():
         # Рисуем картинку, загружаемую из только что созданного файла.
         screen.blit(pygame.image.load(map_file), (0, 0))
         pygame.display.flip()
-    open_mainwindow()
     pygame.quit()
     # Удаляем файл с изображением.
     os.remove(map_file)
@@ -282,8 +283,9 @@ def open_mainwindow():
     app = QApplication(sys.argv)
     ex = mainwindow()
     ex.show()
+    ex.hide()
+    ex.show()
     sys.exit(app.exec())
-
 
 if __name__ == '__main__':
     open_mainwindow()
