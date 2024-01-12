@@ -152,7 +152,7 @@ class mainwindow(QMainWindow):
         self.stackedWidget.setCurrentIndex(0)
 
     def tema(self):
-        pass
+        open_mainwindow_blak()
 
     def select(self):
         self.con = sqlite3.connect("moscow_landmarks.db")
@@ -257,35 +257,52 @@ def load_map(mp):
 
 
 def main():
-    # Инициализируем pygame
-    pygame.init()
-    screen = pygame.display.set_mode((600, 450))
-    mp = MapParams()
-    while True:
-        flLeft = flRight = False
-        event = pygame.event.wait()
-        if event.type == pygame.QUIT:  # Выход из программы
-            break
-        elif event.type == pygame.KEYDOWN:  # Обрабатываем различные нажатые клавиши.
-            mp.update(event)
+  # Инициализируем pygame
+  pygame.init()
+  screen = pygame.display.set_mode((600, 450))
+  mp = MapParams()
+  # создание объекта Clock
+  clock = pygame.time.Clock()
 
-            # Создаем файл
-        map_file = load_map(mp)
-        # Рисуем картинку, загружаемую из только что созданного файла.
-        screen.blit(pygame.image.load(map_file), (0, 0))
-        pygame.display.flip()
-    pygame.quit()
-    # Удаляем файл с изображением.
-    os.remove(map_file)
+  # установка FPS
+  FPS = 60
+  map_file = None
+  while True:
+      events = pygame.event.get()
+      for event in events:
+          if event.type == pygame.QUIT: # Выход из программы
+              break
+          elif event.type == pygame.KEYDOWN: # Обрабатываем различные нажатые клавиши.
+              mp.update(event)
+              map_file = load_map(mp)
+
+      if map_file is not None:
+          # Рисуем картинку, загружаемую из только что созданного файла.
+          screen.blit(pygame.image.load(map_file), (0, 0))
+          pygame.display.update()
+
+      clock.tick(FPS) # Ограничение FPS
+
+  pygame.quit()
+  # Удаляем файл с изображением.
+  if map_file is not None:
+      os.remove(map_file)
+
+
+
+def open_mainwindow_blak():
+    app = QApplication(sys.argv)
+    print(12)
+    ex = bl.mainwindow()
+    ex.show()
+    sys.exit(app.exec())
 
 
 def open_mainwindow():
     app = QApplication(sys.argv)
     ex = mainwindow()
     ex.show()
-    ex.hide()
-    ex.show()
     sys.exit(app.exec())
 
 if __name__ == '__main__':
-    open_mainwindow()
+    open_mainwindow_blak()
