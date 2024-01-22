@@ -96,7 +96,7 @@ class Example(QWidget):
         self.btn.move(*self.coords)
 
 
-class mainwindow(QMainWindow):
+class black_mainwindow(QMainWindow):
     def __init__(self):
         print(1)
         super().__init__()
@@ -123,9 +123,9 @@ class mainwindow(QMainWindow):
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
         self.button_home_1.clicked.connect(self.homi)
-        mainwindow.hide(self)
+        black_mainwindow.hide(self)
         main()
-        mainwindow.show(self)
+        black_mainwindow.show(self)
         self.stackedWidget.setCurrentIndex(0)
 
     def settings(self):
@@ -280,7 +280,7 @@ def main():
 
 def open_mainwindow():
     app = QApplication(sys.argv)
-    ex = mainwindow()
+    ex = black_mainwindow()
     ex.show()
     ex.hide()
     ex.show()

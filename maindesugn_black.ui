@@ -7,33 +7,59 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>500</height>
+    <height>549</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>400</width>
-    <height>10</height>
+    <height>549</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>400</width>
-    <height>500</height>
+    <height>550</height>
    </size>
+  </property>
+  <property name="font">
+   <font>
+    <kerning>true</kerning>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="whatsThis">
+   <string/>
+  </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0.971591, y2:0.949, stop:0 rgba(0, 0, 180, 255), stop:0.994318 rgba(164, 0, 171, 255));</string>
+   <string notr="true"/>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-10</y>
+      <y>40</y>
       <width>401</width>
       <height>381</height>
      </rect>
@@ -42,26 +68,33 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0.0965909 rgba(0, 28, 70, 255), stop:0.914773 rgba(176, 39, 255, 255))</string>
+     <string notr="true">background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0.0965909 rgba(0, 28, 70, 255), stop:0.914773 rgba(176, 39, 255, 255));
+</string>
     </property>
     <property name="lineWidth">
      <number>0</number>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="home">
      <property name="styleSheet">
       <string notr="true">background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0.0965909 rgba(0, 28, 70, 255), stop:0.914773 rgba(176, 39, 255, 255))</string>
      </property>
      <widget class="QTextBrowser" name="textBrowser">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>0</y>
         <width>401</width>
-        <height>371</height>
+        <height>381</height>
        </rect>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
       </property>
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -70,6 +103,12 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.15094pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;Добро пожаловать в нашу программу о туристических маршрутах! Здесь вы найдете множество увлекательных и захватывающих маршрутов для путешествий по Москве в пределах Садового кольца. Готовы отправиться в увлекательное путешествие? Тогда давайте начнем!&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;добавить количество избранных в маршрутах&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="acceptRichText">
+       <bool>true</bool>
+      </property>
+      <property name="openLinks">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -80,8 +119,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="button_home12">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>10</y>
+        <x>320</x>
+        <y>0</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -107,9 +146,9 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>10</y>
+        <y>0</y>
         <width>411</width>
-        <height>381</height>
+        <height>391</height>
        </rect>
       </property>
       <property name="font">
@@ -193,7 +232,7 @@ QTabBar::tab
       <property name="geometry">
        <rect>
         <x>330</x>
-        <y>10</y>
+        <y>0</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -215,19 +254,6 @@ QTabBar::tab
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>130</y>
-        <width>181</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Hello world</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="poisk">
      <property name="styleSheet">
@@ -237,7 +263,7 @@ QTabBar::tab
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>10</y>
+        <y>0</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -263,7 +289,7 @@ QTabBar::tab
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>10</y>
         <width>271</width>
         <height>41</height>
        </rect>
@@ -280,7 +306,7 @@ border-radius: 20px;  </string>
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>20</y>
+        <y>10</y>
         <width>71</width>
         <height>41</height>
        </rect>
@@ -302,32 +328,29 @@ border-radius: 20px;  </string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QListView" name="listView">
+     <widget class="QListWidget" name="listWidget">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>70</y>
-        <width>371</width>
-        <height>311</height>
+        <width>381</width>
+        <height>291</height>
        </rect>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::VLine</enum>
       </property>
       <property name="lineWidth">
        <number>0</number>
       </property>
-      <property name="flow">
-       <enum>QListView::LeftToRight</enum>
-      </property>
-      <property name="isWrapping" stdset="0">
-       <bool>false</bool>
-      </property>
      </widget>
-     <zorder>listView</zorder>
      <zorder>lineEdit</zorder>
      <zorder>Naity</zorder>
      <zorder>button_home_2</zorder>
+     <zorder>listWidget</zorder>
     </widget>
     <widget class="QWidget" name="settings_2">
      <property name="styleSheet">
@@ -336,8 +359,8 @@ border-radius: 20px;  </string>
      <widget class="QPushButton" name="button_home_3">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>10</y>
+        <x>320</x>
+        <y>0</y>
         <width>71</width>
         <height>71</height>
        </rect>
@@ -405,7 +428,7 @@ border-radius: 20px;  </string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>380</y>
+      <y>420</y>
       <width>71</width>
       <height>81</height>
      </rect>
@@ -431,7 +454,7 @@ border-radius: 20px;  </string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>380</y>
+      <y>420</y>
       <width>81</width>
       <height>81</height>
      </rect>
@@ -457,7 +480,7 @@ border-radius: 20px;  </string>
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>380</y>
+      <y>420</y>
       <width>101</width>
       <height>81</height>
      </rect>
@@ -483,7 +506,7 @@ border-radius: 20px;  </string>
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>380</y>
+      <y>420</y>
       <width>81</width>
       <height>81</height>
      </rect>
@@ -505,11 +528,126 @@ border-radius: 20px;  </string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QWidget" name="Titile" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>401</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(x1:0 y1:0, x2:1 y2:1, stop:0 #051c2a stop:1 #44315f);
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;</string>
+    </property>
+    <widget class="QPushButton" name="red_button">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>0</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+border: none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>red-circlуe.png</normaloff>red-circlуe.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>13</width>
+       <height>13</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="green_button">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>0</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+border: none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>green.png</normaloff>green.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>13</width>
+       <height>13</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="yellow_button">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>0</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255, 0);
+border: none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>yellow .png</normaloff>yellow .png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>13</width>
+       <height>13</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>401</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:qlineargradient(spread:repeat, x1:0, y1:0, x2:1, y2:1, stop:0.0965909 rgba(0, 28, 70, 255), stop:0.914773 rgba(176, 39, 255, 255));
+border-radius: 15px;  
+</string>
+    </property>
+   </widget>
+   <zorder>widget</zorder>
    <zorder>lupabutton</zorder>
-   <zorder>stackedWidget</zorder>
    <zorder>kartatabutton</zorder>
    <zorder>shapkakabutton</zorder>
    <zorder>settingsbutton</zorder>
+   <zorder>stackedWidget</zorder>
+   <zorder>Titile</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

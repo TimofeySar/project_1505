@@ -15,7 +15,10 @@ class black_mainwindow(QMainWindow):
         print(1)
         super(black_mainwindow, self).__init__(parent)
         uic.loadUi('maindesugn_black.ui', self)
+        self.centralwidget.setStyleSheet("#centralwidget {border-radius: 5px;}")
         self.setMouseTracking(True)
+        self.m_drag = False
+        self.m_DragPosition = QPoint()
         self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.stackedWidget.setCurrentIndex(0)
@@ -34,7 +37,7 @@ class black_mainwindow(QMainWindow):
         self.h = 450
 
     def closeApp(self):
-        black_mainwindow.close(self)
+        #mainwindow.close(self)
 
     def doNothing(self):
         pass
