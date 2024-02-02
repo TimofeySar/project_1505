@@ -113,6 +113,10 @@ class mainwindow(QMainWindow):
         self.btn_size = [75, 23]
         self.w = 350
         self.h = 450
+        try:
+            self.listWidget.clicked.connect(self.show_dialog)
+        except:
+            pass
 
     def lupa(self):
         self.button_home_2.clicked.connect(self.homi)
@@ -200,11 +204,7 @@ class mainwindow(QMainWindow):
         for elem in result:
             self.listWidget.addItem(elem[0])
             print(1234)
-        if not result:
-            self.listWidget.addItem('Неверный запрос')
-            self.listWidget.addItem('Похоже такой достопремечательности нет в москве:(')
-        else:
-            self.listWidget.clicked.connect(lambda: self.show_dialog())
+
 
 
 
@@ -218,28 +218,31 @@ class Info_window(QDialog):
         req = cur.execute("""SELECT * FROM landmarks WHERE 
                                name = ?""",
                           (self.item,)).fetchall()
-        info_text = str(req[0][2])
-        result = ' '.join(info_text.split())
-        print(len(result))
-        print(result)
-        if 1300 > len(result) > 600:
-            font = QFont("Arial", 11)
-        elif len(result) < 600:
-            font = QFont("Arial", 13)
-        else:
-            font = QFont("Arial", 8)
-        self.label.setText(item)
-        self.label_3.setText(str(req[0][3]))
-        self.label_4.setText(result)
-        self.label_4.setWordWrap(True)
-        self.label.setWordWrap(True)
-        self.label_4.setFont(font)
+        try:
+            info_text = str(req[0][2])
+            result = ' '.join(info_text.split())
+            print(len(result))
+            print(result)
+            if 1300 > len(result) > 600:
+                font = QFont("Arial", 11)
+            elif len(result) < 600:
+                font = QFont("Arial", 13)
+            else:
+                font = QFont("Arial", 8)
+            self.label.setText(item)
+            self.label_3.setText(str(req[0][3]))
+            self.label_4.setText(result)
+            self.label_4.setWordWrap(True)
+            self.label.setWordWrap(True)
+            self.label_4.setFont(font)
+        except:
+            sys.exit(app.exec_())
 
 
 class MapParams(object):
     def __init__(self):
-        self.lat = 61.665279  # Координаты центра карты на старте. Задал координаты университета
-        self.lon = 50.813492
+        self.lat = 55.75482  # Координаты центра карты на старте. Задал координаты университета
+        self.lon = 37.62169
         self.zoom = 16  # Масштаб карты на старте. Изменяется от 1 до 19
         self.type = "map"  # Другие значения "sat", "sat,skl"
         self.my_step = 0.003
@@ -350,6 +353,10 @@ class black_mainwindow(QMainWindow):
         self.coords = [240, 310]
         self.btn_size = [75, 23]
         self.w = 350
+        try:
+            self.listWidget.clicked.connect(self.show_dialog)
+        except:
+            pass
         self.h = 450
 
     def closeApp(self):
@@ -464,12 +471,6 @@ class black_mainwindow(QMainWindow):
         for elem in result:
             self.listWidget.addItem(elem[0])
 
-        if not result:
-            self.listWidget.addItem('Неверный запрос')
-            self.listWidget.addItem('Похоже такой достопремечательности нет в москве:(')
-        else:
-            print(123)
-            self.listWidget.itemClicked.connect(lambda: self.show_dialog())
 
 
 class Info_window_black(QDialog):
