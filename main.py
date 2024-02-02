@@ -354,10 +354,18 @@ class black_mainwindow(QMainWindow):
         self.btn_size = [75, 23]
         self.w = 350
         try:
-            self.listWidget.clicked.connect(self.show_dialog)
+            self.listWidget.itemActivated.connect(lambda item: self.show_dialog(item))
+            self.listWidget.installEventFilter(self)
         except:
             pass
         self.h = 450
+
+    def eventFilter(self, obj, event):
+        if obj == self.listWidget and event.type() == QEvent.MouseButtonRelease:
+            item = self.listWidget.itemAt(event.pos())
+            if item:
+                self.show_dialog(item)
+        return super(black_mainwindow, self).eventFilter(obj, event)
 
     def closeApp(self):
         black_mainwindow.close(self)
@@ -425,13 +433,16 @@ class black_mainwindow(QMainWindow):
     def ydai(self):
         self.lineEdit.clear()
 
-    def show_dialog(self):
+    def show_dialog(self, item):
         print(2)
-        item = self.listWidget.currentItem()
-        item = str(item.text())
-        Info_window_copy = Info_window(item)
-        Info_window_copy.exec()
+        item_text = item.text()
+        Info_window_copy = Info_window(item_text)
 
+        # Устанавливаем флаги окна
+        Info_window_copy.setWindowFlags(Qt.Window | Qt.WindowStaysOnTopHint)
+
+        # Отображаем окно
+        Info_window_copy.exec()
     def homi(self):
         self.stackedWidget.setCurrentIndex(0)
 
