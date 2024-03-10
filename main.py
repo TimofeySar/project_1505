@@ -4,7 +4,8 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QWidget, QDialog
 import random
 from PyQt5.QtCore import pyqtSignal
-
+from urllib import request
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtGui import QFont, QCursor
 import pygame, requests, os, math
 from PyQt5.QtCore import Qt, QEvent, QPoint
@@ -235,8 +236,16 @@ class Info_window(QDialog):
             self.label_4.setWordWrap(True)
             self.label.setWordWrap(True)
             self.label_4.setFont(font)
+            try:
+                data = request.urlopen(str(req[0][4])).read()
+                self.pixmap = QPixmap()
+                self.pixmap.loadFromData(data)
+                self.label_5.setPixmap(self.pixmap)
+            except:
+
+                self.label_5.setText("no picture")
         except:
-            sys.exit(app.exec_())
+            pass
 
 
 class MapParams(object):
