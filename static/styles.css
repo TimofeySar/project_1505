@@ -1,0 +1,69 @@
+/* static/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Добавим стили для ваших заголовков и текста */
+h2 {
+    color: #007BFF;
+}
+
+/* Добавим стили для фона и отступов */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Добавим стили для контейнера с изображением и текстом */
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Добавим стили для разделителя между блоками */
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 2px solid #007BFF;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+    background-image: url('backgroung.jpg'); /* Замените 'background.jpg' на ваш файл заднего фона */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+.container img {
+    max-width: 400px;
+    height: auto;
+}

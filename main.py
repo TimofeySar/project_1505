@@ -401,10 +401,8 @@ class black_mainwindow(QMainWindow):
 
     def new_keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
-            # Показываем кнопку при нажатии Enter
             self.select()
         else:
-            # Для всех других клавиш вызываем оригинальный метод
             self.old_keyPressEvent(event)
 
     def shapkala(self):
