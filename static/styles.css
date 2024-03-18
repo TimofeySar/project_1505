@@ -2,15 +2,18 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    font-size: 16px; /* Базовый размер шрифта */
 }
 
 h1, h2 {
     color: #333;
+    font-size: 26px; /* Увеличиваем размер шрифта на 10 пунктов */
 }
 
 p {
     color: #555;
     line-height: 1.6;
+    font-size: 16px; /* Увеличиваем размер шрифта на 10 пунктов */
 }
 
 img {
@@ -41,9 +44,10 @@ hr {
     border: 0;
     border-top: 2px solid #007BFF;
 }
+
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 50px;
     background-color: #f8f9fa;
     background-image: url('backgroung.jpg'); /* Замените 'background.jpg' на ваш файл заднего фона */
     background-size: cover;
