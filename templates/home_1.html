@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moscow Exploration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
    .leftimg {
@@ -15,15 +15,75 @@
     float: right; /* Выравнивание по правому краю  */
     margin: 7px 0 7px 7px; /* Отступы вокруг картинки */
    }
+   .navbar {
+      background-color: rgba(0, 0, 0, 0); /* Полностью прозрачный цвет фона */
+       padding-top: 0; /* Убираем отступ сверху */
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #343a40 !important; /* Темно-серый цвет текста */
+      font-size: 30px; /* Увеличиваем размер шрифта на 5 пунктов */
+    }
+
+
+
+    .nav-item {
+      margin-right: 20px; /* Увеличиваем расстояние между элементами */
+    }
+
+   .btn-transparent {
+    color: #fff; /* Белый цвет текста */
+
+  }
+
+  .btn-transparent:hover {
+    color: #000; /* Черный цвет текста при наведении */
+    background-color: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
+    border-color: #fff; /* Белый цвет рамки при наведении */
+  }
   </style>
 
 </head>
 <body>
-    <h1>Добро пожаловать в исследование Москвы!</h1>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <!-- Используем класс "me-auto" для автоматического выравнивания элементов по левому краю -->
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <a class="navbar-brand" href="#">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Bootstrap" width="50" height="50">
+    </a>
+    <!-- Кнопка Главная -->
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="/action">Главная</a>
+    </li>
+    <!-- Выпадающий список Маршруты -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Маршруты
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="#">Маршрут 1</a></li>
+        <li><a class="dropdown-item" href="#">Маршрут 2</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Другие маршруты</a></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- Кнопки регистрации и авторизации -->
+  <div>
+   <a href="#" class="btn btn-primary btn-transparent me-2">Регистрация</a>
+  <a href="#" class="btn btn-danger btn-transparent">Авторизация</a>
+</div>
+</div>
+    </nav>
+        </header>
+        <h1>Добро пожаловать в исследование Москвы!</h1>
 
-    <h2>Красная площадь</h2>
-    <img src="{{ url_for('static', filename='red.jpg') }}" alt="Охотный Ряд" style="float: right;">
-    <p>
+        <h2>Красная площадь</h2>
+        <img src="{{ url_for('static', filename='red.jpg') }}" alt="Охотный Ряд" style="float: right;">
+        <p>
         Добрый день, вечер или утро. Всем здравствуйте!<br>
 
 Хотелось бы начать с сердца нашего города – Красной площади! А именно станция метро «Охотный Ряд». Хотелось бы рассказать немного интересного про эту станцию:<br>
@@ -108,5 +168,6 @@
     Пройдя через Яузский бульвар, мы окажемся на Устьинском сквере. Нам откроется потрясающий вид на Высотное здание сталинской эпохи, которое находится на Котельнической набережной. Высотное здание на Котельнической набережной — одно из самых удачных среди семи высотных зданий столицы. Оно было построено в 1949–1952 годах архитекторами Д.Н. Чечулиным и А.К. Ростковским. Здание представляет собой жилой дом, включающий в себя 540 квартир, 10 общежитий, магазины и кинотеатр. Ансамбль состоит из центральной высотной части в 24 этажа и боковых корпусов 8–12-этажной высоты.<br>
     Дальше мы пройдемся до станции метро «Новокузнецкая» и будем наблюдать архитектуру Москвы 20 века. После спустимся по Пятницкой улице к Храму священномученика Климента Папы Римского Русской православной церкви - православный храм в честь Священномученика Климента, расположенный в Москве на пересечении Климентовского переулка и улицы Пятницкой. Является крупнейшим в Замоскворечье храмом. Его главный престол освящён в честь Преображения Господня и вторым названием церкви является храм Спаса Преображения. Нынешнее здание храма было построено в 1770 году<br>
     Мы вышли к станции метро «Третьяковская». Перед нами сразу же открывается Церковь иконы Божией Матери Всех скорбящих Радость на </p>
+        <script src="static/bootstrap.bundle.js"></script>
 </body>
 </html>
