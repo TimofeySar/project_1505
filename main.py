@@ -9,6 +9,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtGui import QFont, QCursor
 import pygame, requests, os, math
 from PyQt5.QtCore import Qt, QEvent, QPoint
+from PyQt5.QtWidgets import *
 
 
 class chachech(QDialog):
@@ -238,9 +239,14 @@ class Info_window(QDialog):
             self.label_4.setFont(font)
             try:
                 data = request.urlopen(str(req[0][4])).read()
-                self.pixmap = QPixmap()
-                self.pixmap.loadFromData(data)
-                self.label_5.setPixmap(self.pixmap)
+                pixmap = QPixmap()
+                pixmap.loadFromData(data)
+                scaled_pixmap = pixmap.scaled(self.label_5.size(), Qt.KeepAspectRatio)
+
+                # Устанавливаем масштабированное изображение в QLabel
+                self.label_5.setPixmap(scaled_pixmap)
+
+
             except:
 
                 self.label_5.setText("no picture")
@@ -489,34 +495,6 @@ class black_mainwindow(QMainWindow):
         for elem in result:
             self.listWidget.addItem(elem[0])
 
-
-
-class Info_window_black(QDialog):
-    def __init__(self, item):
-        super().__init__()
-        uic.loadUi('vidget.ui', self)
-        self.item = str(item)
-        self.connn = sqlite3.connect("moscow_landmarks.db")
-        cur = self.connn.cursor()
-        req = cur.execute("""SELECT * FROM landmarks WHERE 
-                               name = ?""",
-                          (self.item,)).fetchall()
-        info_text = str(req[0][2])
-        result = ' '.join(info_text.split())
-        print(len(result))
-        print(result)
-        if 1300 > len(result) > 600:
-            font = QFont("Arial", 11)
-        elif len(result) < 600:
-            font = QFont("Arial", 13)
-        else:
-            font = QFont("Arial", 8)
-        self.label.setText(item)
-        self.label_3.setText(str(req[0][3]))
-        self.label_4.setText(result)
-        self.label_4.setWordWrap(True)
-        self.label.setWordWrap(True)
-        self.label_4.setFont(font)
 
 
 if __name__ == '__main__':
