@@ -10,6 +10,11 @@ from PyQt5.QtGui import QFont, QCursor
 import pygame, requests, os, math
 from PyQt5.QtCore import Qt, QEvent, QPoint
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QUrl
+from PyQt5.QtGui import QDesktopServices
+from flask import Flask, render_template
+from flask.helpers import url_for
+import datetime
 
 
 class chachech(QDialog):
@@ -139,6 +144,36 @@ class mainwindow(QMainWindow):
     def shapkala(self):
         self.stackedWidget.setCurrentIndex(1)
         self.button_home12.clicked.connect(self.homi)
+        self.matshrut_1.clicked.connect(self.openURL_1)
+        self.matshrut_2.clicked.connect(self.openURL_2)
+        self.matshrut_3.clicked.connect(self.openURL_3)
+        self.matshrut_4.clicked.connect(self.openURL_4)
+        self.matshrut_5.clicked.connect(self.openURL_5)
+        self.matshrut_6.clicked.connect(self.openURL_6)
+
+    def openURL_1(self):
+        url = QUrl("http://127.0.0.1:8080/first")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
+
+    def openURL_2(self):
+        url = QUrl("http://127.0.0.1:8080/second")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
+
+    def openURL_3(self):
+        url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
+
+    def openURL_4(self):
+        url = QUrl("http://127.0.0.1:8080/forth")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
+
+    def openURL_5(self):
+        url = QUrl("http://127.0.0.1:8080/fifth")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
+
+    def openURL_6(self):
+        url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
@@ -420,9 +455,46 @@ class black_mainwindow(QMainWindow):
         else:
             self.old_keyPressEvent(event)
 
+
     def shapkala(self):
         self.stackedWidget.setCurrentIndex(1)
         self.button_home12.clicked.connect(self.homi)
+        self.matshrut_1.clicked.connect(self.openURL_1)
+        self.matshrut_2.clicked.connect(self.openURL_2)
+        self.matshrut_3.clicked.connect(self.openURL_3)
+        self.matshrut_4.clicked.connect(self.openURL_4)
+        self.matshrut_5.clicked.connect(self.openURL_5)
+        self.matshrut_6.clicked.connect(self.openURL_6)
+
+
+def openURL_1(self):
+    url = QUrl("http://127.0.0.1:8080/first")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
+
+
+def openURL_2(self):
+    url = QUrl("http://127.0.0.1:8080/second")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
+
+
+def openURL_3(self):
+    url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
+
+
+def openURL_4(self):
+    url = QUrl("http://127.0.0.1:8080/forth")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
+
+
+def openURL_5(self):
+    url = QUrl("http://127.0.0.1:8080/fifth")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
+
+
+def openURL_6(self):
+    url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+    QDesktopServices.openUrl(url)
 
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
@@ -499,3 +571,34 @@ class black_mainwindow(QMainWindow):
 
 if __name__ == '__main__':
     open_mainwindow()
+
+
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(
+    days=365)
+
+@app.route("/fifth")
+def home():
+    return render_template("home.html")
+
+@app.route("/forth")
+def home_1():
+    return render_template("home_1.html")
+
+@app.route("/first")
+def home_2():
+    return render_template("trip1.html")
+
+@app.route("/second")
+def home_3():
+    return render_template("jor2.html")
+
+@app.route("/third")
+def home_4():
+    return render_template("trip3.html")
+
+
+if __name__ == "__main__":
+    app.run(port=8080, host='127.0.0.1')

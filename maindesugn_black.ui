@@ -75,7 +75,7 @@
      <number>0</number>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="home">
      <property name="styleSheet">
@@ -142,87 +142,241 @@ p, li { white-space: pre-wrap; }
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QPushButton" name="matshrut_1">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>411</width>
-        <height>391</height>
+        <y>20</y>
+        <width>341</width>
+        <height>41</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <italic>false</italic>
-        <underline>false</underline>
-        <strikeout>false</strikeout>
-        <stylestrategy>PreferDefault</stylestrategy>
-        <kerning>true</kerning>
-       </font>
-      </property>
-      <property name="mouseTracking">
-       <bool>false</bool>
-      </property>
-      <property name="tabletTracking">
-       <bool>false</bool>
-      </property>
-      <property name="contextMenuPolicy">
-       <enum>Qt::PreventContextMenu</enum>
-      </property>
-      <property name="acceptDrops">
-       <bool>false</bool>
-      </property>
-      <property name="toolTipDuration">
-       <number>0</number>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QTabWidget::pane
-{
-border:0
-}
-QTabBar::tab
-	{
-	
-	background-color: rgb(184, 70, 255);
-}</string>
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
       </property>
-      <property name="tabPosition">
-       <enum>QTabWidget::North</enum>
+      <property name="text">
+       <string>Маршрут №1: Кремль - Парк культуры</string>
       </property>
-      <property name="tabShape">
-       <enum>QTabWidget::Triangular</enum>
+      <property name="autoDefault">
+       <bool>false</bool>
       </property>
-      <property name="currentIndex">
-       <number>1</number>
+      <property name="default">
+       <bool>false</bool>
       </property>
-      <property name="elideMode">
-       <enum>Qt::ElideLeft</enum>
-      </property>
-      <property name="usesScrollButtons">
+      <property name="flat">
        <bool>true</bool>
       </property>
-      <property name="documentMode">
-       <bool>false</bool>
-      </property>
-      <property name="tabsClosable">
-       <bool>false</bool>
-      </property>
-      <property name="tabBarAutoHide">
-       <bool>false</bool>
-      </property>
-      <widget class="QWidget" name="marshutu">
-       <attribute name="title">
-        <string>Все</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="moee">
-       <attribute name="title">
-        <string>Избранное</string>
-       </attribute>
-      </widget>
      </widget>
-     <zorder>tabWidget</zorder>
-     <zorder>button_home12</zorder>
+     <widget class="QPushButton" name="matshrut_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>351</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+				text-align: left;
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
+      </property>
+      <property name="text">
+       <string>Маршрут №6: Садовое колькцо</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="matshrut_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>321</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
+      </property>
+      <property name="text">
+       <string>Маршрут №2: Лубянка - Барикадная</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="matshrut_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>120</y>
+        <width>381</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
+      </property>
+      <property name="text">
+       <string>Маршрут №3: Охотный ряд - Кропоткинская</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="matshrut_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>240</y>
+        <width>371</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
+      </property>
+      <property name="text">
+       <string>Маршрут №5: Охотный ряд - Кропоткинская</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="matshrut_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>180</y>
+        <width>371</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton {
+                border: none;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 18px;
+                min-width: 19px;
+                min-height: 10px;
+                background-color: transparent;
+                color: white; /* черный цвет текста */
+            }
+            QPushButton:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+                color: rgba(0, 0, 0, 0.8); /* менее прозрачный черный текст */
+            }
+            QPushButton:pressed {
+                background-color: #bbdefb;    
+            }</string>
+      </property>
+      <property name="text">
+       <string>Маршрут №4: Охотный ряд - Октяборьская</string>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="karta">
      <property name="styleSheet">
