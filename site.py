@@ -27,6 +27,10 @@ def home_3():
 def home_4():
     return render_template("trip3.html")
 
+@app.route("/six")
+def home_7():
+    return render_template("gome_6.html")
+
 
 if __name__ == "__main__":
     app.run(port=8080, host='127.0.0.1')

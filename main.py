@@ -172,7 +172,7 @@ class mainwindow(QMainWindow):
         QDesktopServices.openUrl(url)
 
     def openURL_6(self):
-        url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+        url = QUrl("http://127.0.0.1:8080/six")  # Замените на нужный URL
         QDesktopServices.openUrl(url)
 
     def kartata(self):
@@ -467,34 +467,34 @@ class black_mainwindow(QMainWindow):
         self.matshrut_6.clicked.connect(self.openURL_6)
 
 
-def openURL_1(self):
-    url = QUrl("http://127.0.0.1:8080/first")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_1(self):
+        url = QUrl("http://127.0.0.1:8080/first")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
 
-def openURL_2(self):
-    url = QUrl("http://127.0.0.1:8080/second")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_2(self):
+        url = QUrl("http://127.0.0.1:8080/second")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
 
-def openURL_3(self):
-    url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_3(self):
+        url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
 
-def openURL_4(self):
-    url = QUrl("http://127.0.0.1:8080/forth")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_4(self):
+        url = QUrl("http://127.0.0.1:8080/forth")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
 
-def openURL_5(self):
-    url = QUrl("http://127.0.0.1:8080/fifth")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_5(self):
+        url = QUrl("http://127.0.0.1:8080/fifth")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
 
-def openURL_6(self):
-    url = QUrl("http://127.0.0.1:8080/third")  # Замените на нужный URL
-    QDesktopServices.openUrl(url)
+    def openURL_6(self):
+        url = QUrl("http://127.0.0.1:8080/six")  # Замените на нужный URL
+        QDesktopServices.openUrl(url)
 
     def kartata(self):
         self.stackedWidget.setCurrentIndex(2)
@@ -598,6 +598,10 @@ def home_3():
 @app.route("/third")
 def home_4():
     return render_template("trip3.html")
+
+@app.route("/six")
+def home_7():
+    return render_template("gome_6.html")
 
 
 if __name__ == "__main__":
