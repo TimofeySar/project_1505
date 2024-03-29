@@ -1,6 +1,9 @@
 from flask import Flask, render_template
 from flask.helpers import url_for
 import datetime
+import main
+import threading
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -32,5 +35,7 @@ def home_7():
     return render_template("gome_6.html")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    threading.Thread(target=main.open_mainwindow).start()
     app.run(port=8080, host='127.0.0.1')
+
